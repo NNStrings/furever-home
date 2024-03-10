@@ -10,9 +10,6 @@ server.on("request", function(req, res){
     const fpath = path.join(__dirname, "../", "animals-ui", url);
     content = '<h1>404 Not Found</h1>'
     fs.readFile(fpath, function(err, dataStr) {
-        if (err) {
-            return res.end(content);
-        }
         res.end(dataStr);
     });
 });
