@@ -8,7 +8,8 @@ server.on("request", function(req, res){
     const url = req.url;
     const method = req.method;
     const fpath = path.join(__dirname, "../", "animals-ui", url);
-    content = '<h1>404 Not Found</h1>'
+    const ext = path.extname(path);
+    
     fs.readFile(fpath, function(err, dataStr) {
         res.end(dataStr);
     });
