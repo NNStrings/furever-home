@@ -1,20 +1,9 @@
-const http = require("http");
-const path = require("path");
-const fs = require("fs");
+const express = require("express");
 
-const server = http.createServer();
+const app = express();
 
-server.on("request", function(req, res){
-    const url = req.url;
-    const method = req.method;
-    const fpath = path.join(__dirname, "../", "animals-ui", url);
-    const ext = path.extname(path);
-    
-    fs.readFile(fpath, function(err, dataStr) {
-        res.end(dataStr);
-    });
-});
+app.use(express.static("../animals-ui"));
 
-server.listen(8080, function(){
-    console.log("server running at http://localhost:8080");
+app.listen(80, () => {
+    console.log("server is running at http://127.0.0.1");
 })
