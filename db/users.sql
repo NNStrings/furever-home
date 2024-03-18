@@ -15,3 +15,6 @@ CHANGE COLUMN `id` `id` INT NOT NULL DEFAULT 0 ;
 ALTER TABLE `furever-home`.`users` 
 CHANGE COLUMN `username` `username` VARCHAR(255) NOT NULL ,
 CHANGE COLUMN `password` `password` VARCHAR(255) NOT NULL ;
+
+ALTER TABLE `furever-home`.`users` 
+CHANGE COLUMN `id` `id` INT NOT NULL AUTO_INCREMENT ;

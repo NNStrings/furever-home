@@ -28,7 +28,7 @@ exports.regUser = (req, res) => {
         if (err) {
             return res.cc(err);
         }
-        if (result.affecetedRow !== 1) {
+        if (result.affectedRows !== 1) {
             return res.cc('未知错误，注册失败，请稍后再试');
         }
         res.cc('注册成功', 0);
