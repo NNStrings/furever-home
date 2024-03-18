@@ -21,17 +21,6 @@
     <link rel="stylesheet" type="text/css" href="css/search_css/demo.css">
     <link rel="stylesheet" href="css/search_css/style.css">
 
-    <!-- 引入公用的js-->
-    <script src="./js/vue/vue.js"></script>
-    <script src="./js/axios.min.js"></script>
-    <script src="./js/common.js"></script>
-
-    <!--element-->
-    <!-- 引入样式 -->
-   <!-- <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-    &lt;!&ndash; 引入组件库 &ndash;&gt;
-    <script src="https://unpkg.com/element-ui/lib/index.js"></script>-->
-
     <!--element-->
     <link rel="stylesheet" href="static/element-2.12.0/index.css">
     <script src="static/element-2.12.0/index.js"></script>
@@ -39,10 +28,6 @@
     <!-- 引入自己写的样式 -->
     <link rel="stylesheet" href="css/index_style.css">
     <link rel="stylesheet" href="css/login_style.css">
-
-    <!-- 引入自己写的js文件 -->
-    
-    <script src="js/my_js/login.js"></script>
 
 </head>
 <body>
@@ -109,19 +94,18 @@
                     <!--登录表单-->
                     <form>
                         帐&emsp;号:&emsp;&emsp;
-                        <!--v-model 双向绑定数据-->
                         <input v-model="user.username" id="username" name="username" class="form-control required"
-                               type="text" placeholder="请输入用户名/手机号/邮箱"
-                               style="width: 80%">
+                                type="text" placeholder="请输入用户名/手机号/邮箱"
+                                style="width: 80%">
                         密&emsp;码:&emsp;&emsp;
                         <input v-model="user.password" id="password" name="password" class="form-control required"
-                               type="password" placeholder="请输入登录密码"
-                               style="width: 80%"><br>
+                                type="password" placeholder="请输入登录密码"
+                                style="width: 80%"><br>
                         <div class="form-group col-md-offset-2">
-                            <!--  @click 表示点击事件 submit 是绑定的事件方法 -->
                             <button @click.stop="submit" id="login-btn" type="button" class="btn btn-success" style="margin-left: 10px">登录</button>
                         </div>
                         &emsp;&emsp;&emsp;还不是社区用户？<a href="regist.html">赶紧去注册</a><br><br>
+                        <div v-if="message" style="color: red;">{{ message }}</div>
                     </form>
                 </div>
             </div>
@@ -132,78 +116,51 @@
 
 <hr/>
 <!-- 设置底部布局 -->
-<div class="footer">
+<!-- <div class="footer">
     <script type="text/javascript">$(".footer").load("/src/public/footer.html");</script>
-</div>
+</div> -->
 
 <!-- 引入导航栏js,注意和引入顺序有关 必须放在后面 -->
 <script src='js/jquery.min.js'></script>
-<script src="js/my_js/script.js"></script>
-
 
 <!-- vue 调用-->
-<script type="application/javascript">
-    var registerVm = new Vue({
-        components: {
-            shotcut: () => import('./js/pages/shotcut.js'),
-            ue: () => import('./js/pages/UEdit.js')
-        },
-        el: "#Vue-app",
-        data: {
-            user: {
-                username: '',
-                password: '',
-            },
-            sessionUser: "",
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+<script src="https://unpkg.com/axios@1.6.8/dist/axios.min.js"></script>
+<script>
+    var vm = new Vue({
+        el: "#loginApp",
+        data(){
+            return {
+                user: {
+                    username: '',
+                    password: ''
+                },
+                message: ''
+            }
         },
         methods: {
-            /*发布陈宫消息提示*/
-            showSuccessMsg(data) {
-                this.$message(
-                    {
-                        message: data,
-                        type: 'success'
-                    }
-                );
-            },
-            /*失败消息*/
-            showFaileMsg(data) {
-                this.$message.error(data);
-            },
             submit() {
-                if (!this.user.username) {
-                    this.showFaileMsg("请输入用户名！");
-                    return null;
-                };
-                if (!this.user.password) {
-                    this.showFaileMsg("请输入密码！");
-                    return null;
-                };
-                var _this = this;
-                // 校验通过，提交表单
-                leyou.http.post("/auth/login", leyou.stringify(this.user))
-                    .then(resp => {
-                        if (resp.status === 200) {  // 如果传过来的状态码是201
-                            // 登录成功,之后会跳转到首页
-                            let token = resp.data;
-                            console.log(token);
-                            // 调用封装好的呃 ，设置 window.localStorage.setItem("token", token);
-                            ly.store.set("token", token);
-                            // 设置初始的地区
-                            ly.store.setJson("province", "{id: 1, name: \"上海\"}\n");
-                            ly.store.setJson("city", "{id: 1, name: \"上海\", provinceId: 1}");
-                            window.location = '/index.html';
-                        }
-                        ;
-                        if (resp.status === 202) {
-                            _this.showFaileMsg("用户名或密码错误，请重新输入！");
+                axios.post('http://127.0.0.1/api/login', this.user, {
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
                         }
                     })
-                    .catch( () => {_this.showFaileMsg("服务异常！");})
+                    .then(response => {
+                        if (response.data.status === 0) {
+                            alert('登录成功');
+                            // 可以在登录成功后跳转到其他页面
+                            window.location = '/index.html';
+                        } else {
+                            this.message = response.data.message;
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        this.message = '登录失败';
+                    });
             }
         }
     });
-
 </script>
 </body>
 </html>

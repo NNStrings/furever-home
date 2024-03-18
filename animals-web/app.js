@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const cors = require("cors");
 const joi = require("joi");
@@ -6,6 +7,8 @@ const config = require("./config");
 
 // 服务器对象实例
 const app = express();
+
+app.use(express.static('../animals-ui'));
 
 // 配置 cors 中间件，支持跨域
 app.use(cors());
