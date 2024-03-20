@@ -13,3 +13,12 @@ exports.reg_login_schema = {
         password
     }
 };
+
+// 定义和验证更新密码的规则对象
+
+exports.updata_password_schema = {
+    body: {
+        oldPwd: password,
+        newPwd: joi.not(joi.ref('oldPwd')).concat(password)
+    }
+};

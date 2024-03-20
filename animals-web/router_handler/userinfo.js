@@ -16,3 +16,7 @@ exports.getUserInfo = (req, res) => {
         });
     });
 }
+
+exports.updataPassword = (req, res) => {
+    res.send('ok');
+}
