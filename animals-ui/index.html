@@ -38,9 +38,6 @@
     <link rel="stylesheet" href="static/element-2.12.0/index.css">
     <script src="static/element-2.12.0/index.js"></script>
 
-    <!-- 引入自己写的js文件 -->
-    
-
 </head>
 <body>
 <div class="header" id="header-top">   <!--line-height: 30px 将文字宽度与div一致 让文字居中 -->
@@ -91,9 +88,50 @@
         <!----=================新闻左侧部================---------->
         <div class="news-left">
             <!--左上轮播-->
-            <!-- ------------------------------------------ -->
-            <!-- 轮播导航，可有可无 -->
-            <!-- ------------------------------------------ -->
+            <div class="news-left-photo">
+                <div style="width: 94%;margin: 0 auto">
+                    <div style="height: 10px"></div>
+                    <div id="myCarousel" class="carousel slide">
+                        <!-- 轮播（Carousel）指标 -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+                        <!-- 轮播（Carousel）项目 -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <a href="movie1.html">
+                                    <img src="img/movie/movie01.jpg" alt="First slide">
+                                    <div class="carousel-caption">主人养了一条狗，后来嫌弃狗老了，便抛弃了。后来狗竟然... ... ... ... ... ...
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="movie2.html" style="color: black">
+                                    <img src="img/movie/movie02.jpg" alt="Second slide">
+                                    <div class="carousel-caption">猫咪中毒输狗血续命 原来猫狗之间也有爱!</div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="movie3.html" style="color: black">
+                                    <img src="img/movie/movie03.jpg" alt="Third slide">
+                                    <div class="carousel-caption">小区内流浪猫叼着猫皮，路人嫌弃远离，保安说出原由所有人哭了 ...</div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- 轮播（Carousel）导航 -->
+                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
             <!--右上热点新闻-->
             <div style="width: 96%;margin: 0 auto">

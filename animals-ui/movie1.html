@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:javascript="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Bootstrap 模板</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" sizes="16x16"  href="/favicons/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- 引入 Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- 引入导航栏样式 -->
+    <link rel="stylesheet" href="css/navigation.css">
+
+    <!-- 包括所有已编译的插件 -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- 模态窗口的打开需要依赖此文件 -->
+    <script src="js/modal.js"></script>
+
+
+    <!-- 引入搜索样式 -->
+    <link rel="stylesheet" href="css/search_css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/search_css/style.css">
+
+    <!-- 引入自己写的样式 -->
+    <link rel="stylesheet" href="css/index_style.css">
+    <link rel="stylesheet" href="css/login_style.css">
+    <link rel="stylesheet" href="css/adopt_style.css">
+    <link rel="stylesheet" href="css/article.css">
+
+    <!-- 引入公用的js-->
+    <script src="./js/vue/vue.js"></script>
+    <script src="./js/axios.min.js"></script>
+    <script src="./js/common.js"></script>
+
+    <!--element-->
+    <link rel="stylesheet" href="static/element-2.12.0/index.css">
+    <script src="static/element-2.12.0/index.js"></script>
+
+</head>
+<body>
+<div class="header" id="header-top">   <!--line-height: 30px 将文字宽度与div一致 让文字居中 -->
+    <shotcut2/>   <!--组件化头部-->
+</div>
+
+<div class="container">
+    <!--logo图片-->
+    <div>
+        <img src="img/sa_logo.png">
+    </div>
+
+    <!--导航条-->
+    <div id="nav-1">
+        <ul class="nav">
+            <li class="slide1"></li>
+            <li class="slide2"></li>
+            <li><a class="active" href="index.html">首页</a></li>
+            <li><a href="sys-report.html">系统公告</a></li>
+            <li><a href="adopt.html">领养中心</a></li>
+            <li><a href="daily.html">日常栏目</a></li>
+            <li><a href="knowledge.html">宠物知识</a></li>
+            <li><a href="about-us.html">关于我们</a></li>
+            <!-- 搜索框 -->
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            <li>
+                <div class="search d7">
+                    <form>
+                        <input type="text" placeholder="搜索从这里开始...">
+                        <button type="submit"></button>
+                    </form>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="news">
+        <!----=================新闻左侧部================---------->
+        <div class="acticle_bound">
+            <div style="width: 94%;margin: 0 auto">
+                <div style="height: 10px"></div>
+                <div style="text-align: center;"><img src="img/movie/movie01.jpg" style="height: 400px;"></img></div>
+                <hr/>
+                <h1>主人养了一条狗，后来嫌弃狗老了，便抛弃了。后来狗竟然... </h1>
+                <hr/>
+                <p>最近，有一条新闻让爱狗人士看了都感到十分痛心……</p>
+                <p>在俄罗斯，有一位主人养了一只陪伴他十几年的狗狗，如今狗狗年纪大了，行动也变得越来越缓慢，耳朵也渐渐的不好使了，而且疾病缠身，这位主人非常伤脑筋，于是他决定用条小船把狗带到河中心扔掉……</p>
+                <p>没想到的是虽然游的很辛苦，但无论主人扔了狗狗多少次，它仍然坚持一直跟着主人的小船游，面对这种情况，主人竟用船桨击打狗狗，打的狗呜呜直叫……</p>
+                <p>这时报应来了，他打狗时没站稳，自己掉到了河里，当时天气很冷，他开始呛水，看到主人溺水，这条老狗努力游到他身边，拽着他的胳膊，拼命的把他推到了岸边……</p>
+                <p>主人就这样得救了……</p>
+                <p>看到这儿，不禁想问，面对这样一只不懂得恨，爱你的狗狗，怎么能忍心将它抛弃打死？</p>
+                <p>大家看到小狗狗很可爱，但它们都有老去和生病的时候，虽然外表和身体状况会变糟，但对我们的忠诚永远不会变，但是我们是怎样对待它们的？狗狗因为年老被抛弃的例子并不少见，就在去年法国就传出将十岁老狗活埋塞纳河边的事件。</p>
+                <p>而相反的，很多狗狗在主人离世后仍默默的守候着，不离不弃……</p>
+                <p>还是那句话：狗永远是狗，而人有时候却不是人。</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

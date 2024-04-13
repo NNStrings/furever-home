@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:javascript="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Bootstrap 模板</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" sizes="16x16"  href="/favicons/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- 引入 Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- 引入导航栏样式 -->
+    <link rel="stylesheet" href="css/navigation.css">
+
+    <!-- 包括所有已编译的插件 -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- 模态窗口的打开需要依赖此文件 -->
+    <script src="js/modal.js"></script>
+
+
+    <!-- 引入搜索样式 -->
+    <link rel="stylesheet" href="css/search_css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/search_css/style.css">
+
+    <!-- 引入自己写的样式 -->
+    <link rel="stylesheet" href="css/index_style.css">
+    <link rel="stylesheet" href="css/login_style.css">
+    <link rel="stylesheet" href="css/adopt_style.css">
+    <link rel="stylesheet" href="css/article.css">
+
+    <!-- 引入公用的js-->
+    <script src="./js/vue/vue.js"></script>
+    <script src="./js/axios.min.js"></script>
+    <script src="./js/common.js"></script>
+
+    <!--element-->
+    <link rel="stylesheet" href="static/element-2.12.0/index.css">
+    <script src="static/element-2.12.0/index.js"></script>
+
+</head>
+<body>
+<div class="header" id="header-top">   <!--line-height: 30px 将文字宽度与div一致 让文字居中 -->
+    <shotcut2/>   <!--组件化头部-->
+</div>
+
+<div class="container">
+    <!--logo图片-->
+    <div>
+        <img src="img/sa_logo.png">
+    </div>
+
+    <!--导航条-->
+    <div id="nav-1">
+        <ul class="nav">
+            <li class="slide1"></li>
+            <li class="slide2"></li>
+            <li><a class="active" href="index.html">首页</a></li>
+            <li><a href="sys-report.html">系统公告</a></li>
+            <li><a href="adopt.html">领养中心</a></li>
+            <li><a href="daily.html">日常栏目</a></li>
+            <li><a href="knowledge.html">宠物知识</a></li>
+            <li><a href="about-us.html">关于我们</a></li>
+            <!-- 搜索框 -->
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            <li>
+                <div class="search d7">
+                    <form>
+                        <input type="text" placeholder="搜索从这里开始...">
+                        <button type="submit"></button>
+                    </form>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="news">
+        <!----=================新闻左侧部================---------->
+        <div class="acticle_bound">
+            <div style="width: 94%;margin: 0 auto">
+                <div style="height: 10px"></div>
+                <div style="text-align: center;"><img src="img/movie/movie03.jpg" style="height: 400px;"></img></div>
+                <hr/>
+                <h1>小区内流浪猫叼着猫皮，路人嫌弃，知道原由所有人哭了 ...</h1>
+                <hr/>
+                <p>在一个安宁的小区里，人们生活着各自的平凡日子。然而，一天清晨，一只叼着一块猫皮的流浪猫闯入了他们的视线。</p>
+                <p>当流浪猫出现时，路人们都感到不安，他们纷纷避开这只可怜的动物，甚至有人投以嫌弃的目光。小区的保安大叔，名叫老王，却没有像其他人那样避开。相反，他走到了流浪猫身边，蹲下来仔细观察。</p>
+                <p>“老王，你在干什么？那是只流浪猫，快点走开吧。”一位居民担忧地提醒着。</p>
+                <p>但老王没有理会，他轻轻地抚摸着流浪猫的头，然后仔细地检查着那块猫皮。接着，他站起身来，眼含泪水地对着围观的人们说道：“这块猫皮上写着‘小花’，而这只流浪猫，是我们小区里一位老奶奶的宠物猫。”</p>
+                <p>听到这个消息，围观的人们都感到震惊，他们没想到这只看似普通的流浪猫竟然有着如此感人的背后故事。</p>
+                <p>老王继续说道：“老奶奶已经去世了，她把‘小花’交给了她的侄女照顾，但侄女却不善待它。‘小花’在她家里受尽了折磨，最终逃了出来。它来到我们小区，却因为猫皮的缘故被误解。”</p>
+                <p>听到这个令人心碎的故事，路人们纷纷悔恨自己的冷漠。他们开始围绕着流浪猫，给予它温暖和关爱。有人给它食物喂养，有人为它建立了简易的庇护所，还有人准备好带它去兽医做全面检查。</p>
+                <p>这只流浪猫的命运因为老王的一番话而得到改变，而人们也因为这个故事而懂得了更多关于爱与责任的意义。从此以后，他们对待身边的每个生命都更加温柔，因为他们明白，每个生命背后都可能隐藏着一段动人的故事，而爱和关怀，是我们共同的责任。</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
