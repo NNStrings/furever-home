@@ -38,6 +38,14 @@ app.use("/api" ,userRouter);
 const userinfoRouter = require("./router/userinfo");
 app.use("/my", userinfoRouter);
 
+// 宠物文章
+const articleRouter = require("./router/article");
+app.use("/article", articleRouter);
+
+// 宠物领养
+const adoptRouter = require("./router/adopt");
+app.use("/adopt", adoptRouter);
+
 // 定义错误级别的中间件
 app.use((err, req, res, next) => {
     // 验证失败导致的错误
