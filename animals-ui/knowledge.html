@@ -111,42 +111,131 @@
             <!--开始显示总条数-->
             <div class="total-amount">
                 &emsp;    <!--这里需要渲染数据-->
-                共有<a href="javascript:void(0);"> <span style="font-size: large;color: #FF0000">{{pagination.count}}</span></a> 条数据
+                共有<a href="javascript:void(0);"> <span style="font-size: large;color: #FF0000">7</span></a> 条数据
             </div>
             <br>
             <!--开始进行信息循环展示-->
             <div class="show-adopt-message">
-                <ul style="">
-                    <!--   渲染-->
-                    <li style="height: 110px" v-for="a in animalAdopts">
+                <ul>
+                    <li style="height: 110px">
                         <!--这里用来放图片 大小固定好的-->
-                        <a href="javascript:void (0);" @click="toDetails(a.animalAdopt.id)">
-                            <img width="140px" height="100px" src="img/cat/cat01.jpg">
+                        <a href="./movie1.html">
+                            <img width="140px" height="100px" src="img/movie/movie01.jpg">
                         </a>
                         <!--这里用来描述详细信息-->
                         <!--首先是标题-->
                         <div style="height: 100px;width: 740px;float: right">
-                            <a href="javascript:void(0);" @click="toDetails(a.animalAdopt.id)"><span style="padding-left: 10px;font-size: large">
-                            <font color="green">[领养] </font>{{a.animalAdopt.title}}</span>
-                            </a>
-                            <!--然后要显示时间-->
-                            <div style="float: right;width: 135px;height: 20px">
-                                <span style="float: right">{{a.animalAdopt.createTime}}</span>
-                            </div>
-                            <!--其次是宠物分类-->
-                            <div style="height: 20px;padding-left: 10px">宠类：
-                                <!--数据库中读取-->
-                                <span>{{a.category.type}}/{{a.category.name}}</span>
-                                <!--区县-->
-                                <span>&emsp;&emsp;区县：{{a.location.county}}</span>
-                                <span class="label label-info" style="float: right">待领养</span>
-                            </div>
-
-                            <!--总的描述信息-->
-                            <div style="height: 20px;overflow:hidden;text-overflow:ellipsis;">
-                                <!--数据读取显示-->
-                                <span style="padding-left: 10px;">{{a.animalAdopt.message}}</span>
-                            </div>
+                            <a href="./movie1.html"><span style="padding-left: 10px;font-size: large">主人养了一条狗，后来嫌弃狗老了，便抛弃了。后来狗竟然...</span></a>
+                        </div>
+                    </li>
+                    <li style="height: 110px">
+                        <!--这里用来放图片 大小固定好的-->
+                        <a href="./movie2.html">
+                            <img width="140px" height="100px" src="img/movie/movie02.jpg">
+                        </a>
+                        <!--这里用来描述详细信息-->
+                        <!--首先是标题-->
+                        <div style="height: 100px;width: 740px;float: right">
+                            <a href="./movie2.html"><span style="padding-left: 10px;font-size: large">猫咪中毒输狗血续命 原来猫狗之间也有爱!</span></a>
+                        </div>
+                    </li>
+                    <li style="height: 110px">
+                        <!--这里用来放图片 大小固定好的-->
+                        <a href="./movie3.html">
+                            <img width="140px" height="100px" src="img/movie/movie03.jpg">
+                        </a>
+                        <!--这里用来描述详细信息-->
+                        <!--首先是标题-->
+                        <div style="height: 100px;width: 740px;float: right">
+                            <a href="./movie3.html"><span style="padding-left: 10px;font-size: large">小区内流浪猫叼着猫皮，路人嫌弃远离......</span></a>
+                        </div>
+                    </li>
+                    <li style="height: 110px">
+                        <!--这里用来放图片 大小固定好的-->
+                        <a href="./k1.html">
+                            <img width="0px" height="0px" src="https://pic3.zhimg.com/80/v2-7747e0c9333fc6b8abcfc8798e13694a_1440w.webp"">
+                        </a>
+                        <!--这里用来描述详细信息-->
+                        <!--首先是标题-->
+                        <div style="height: 0px;width: 0px;float: right">
+                            <a href="./k1.html"><span style="padding-left: 10px;font-size: large"></span></a>
+                        </div>
+                    </li>
+                    <li style="height: 110px">
+                        <!--这里用来放图片 大小固定好的-->
+                        <a href="./k1.html">
+                            <img width="140px" height="100px" src="https://pic3.zhimg.com/80/v2-7747e0c9333fc6b8abcfc8798e13694a_1440w.webp">
+                        </a>
+                        <!--这里用来描述详细信息-->
+                        <!--首先是标题-->
+                        <div style="height: 100px;width: 740px;float: right">
+                            <a href="./k1.html"><span style="padding-left: 10px;font-size: large">你可能不知道的狗狗冷知识 ...... </span></a>
+                        </div>
+                    </li>
+                    <li style="height: 110px">
+                        <!--这里用来放图片 大小固定好的-->
+                        <a href="./k1.html">
+                            <img width="0px" height="0px" src="https://pic3.zhimg.com/80/v2-7747e0c9333fc6b8abcfc8798e13694a_1440w.webp"">
+                        </a>
+                        <!--这里用来描述详细信息-->
+                        <!--首先是标题-->
+                        <div style="height: 0px;width: 0px;float: right">
+                            <a href="./k1.html"><span style="padding-left: 10px;font-size: large"></span></a>
+                        </div>
+                    </li>
+                    <li style="height: 110px">
+                        <!--这里用来放图片 大小固定好的-->
+                        <a href="./k2.html">
+                            <img width="140px" height="100px" src="https://img.mp.itc.cn/upload/20161017/30d99e8df20d4f0cba08e8cf3e6abf81_th.jpeg">
+                        </a>
+                        <!--这里用来描述详细信息-->
+                        <!--首先是标题-->
+                        <div style="height: 100px;width: 740px;float: right">
+                            <a href="./k2.html"><span style="padding-left: 10px;font-size: large">五种中华血统的「汪星人」，你家汪是不是？</span></a>
+                        </div>
+                    </li>
+                    <li style="height: 110px">
+                        <!--这里用来放图片 大小固定好的-->
+                        <a href="./k1.html">
+                            <img width="0px" height="0px" src="https://pic3.zhimg.com/80/v2-7747e0c9333fc6b8abcfc8798e13694a_1440w.webp"">
+                        </a>
+                        <!--这里用来描述详细信息-->
+                        <!--首先是标题-->
+                        <div style="height: 0px;width: 0px;float: right">
+                            <a href="./k1.html"><span style="padding-left: 10px;font-size: large"></span></a>
+                        </div>
+                    </li>
+                    <li style="height: 110px">
+                        <!--这里用来放图片 大小固定好的-->
+                        <a href="./k3.html">
+                            <img width="140px" height="100px" src="https://pic1.zhimg.com/80/v2-517e4d919d35cde57034f9f90c140db0_1440w.webp">
+                        </a>
+                        <!--这里用来描述详细信息-->
+                        <!--首先是标题-->
+                        <div style="height: 100px;width: 740px;float: right">
+                            <a href="./k3.html"><span style="padding-left: 10px;font-size: large">宠物狗狗怀孕期间护理正确方法，养狗人必看......</span></a>
+                        </div>
+                    </li>
+                    <li style="height: 110px">
+                        <!--这里用来放图片 大小固定好的-->
+                        <a href="./k1.html">
+                            <img width="0px" height="0px" src="https://pic3.zhimg.com/80/v2-7747e0c9333fc6b8abcfc8798e13694a_1440w.webp"">
+                        </a>
+                        <!--这里用来描述详细信息-->
+                        <!--首先是标题-->
+                        <div style="height: 0px;width: 0px;float: right">
+                            <a href="./k1.html"><span style="padding-left: 10px;font-size: large"></span></a>
+                        </div>
+                    </li>
+                    <li style="height: 110px">
+                        <!--这里用来放图片 大小固定好的-->
+                        <a href="./k4.html">
+                            <img width="140px" height="100px" src="https://pic1.zhimg.com/80/v2-df17a6f926013ecc844cf0f78c8c61e8_1440w.webp">
+                        </a>
+                        <!--这里用来描述详细信息-->
+                        <!--首先是标题-->
+                        <div style="height: 100px;width: 740px;float: right">
+                            <a href="./k4.html"><span style="padding-left: 10px;font-size: large">最新狗狗智商排名，二哈：没想到吧！</span></a>
                         </div>
                     </li>
                 </ul>
