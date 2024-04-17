@@ -63,5 +63,5 @@ app.use((err, req, res, next) => {
 })
 
 app.listen(80, () => {
-    console.log("api server is running at http://127.0.0.1");
+    console.log("api server is running at http://127.0.0.1/login.html");
 })

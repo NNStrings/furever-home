@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html xmlns:javascript="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Bootstrap 模板</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- 引入 Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- 引入导航栏样式 -->
+    <link rel="stylesheet" href="css/navigation.css">
+
+    <!-- 包括所有已编译的插件 -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- 模态窗口的打开需要依赖此文件 -->
+    <script src="js/modal.js"></script>
+
+    <!--引入搜索框样式-->
+    <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+    <link rel="stylesheet" href="css/search_adopt/zfont-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/search_adopt/demo.css">
+    <link rel="stylesheet" href="css/search_adopt/style.css">
+
+    <!-- 引入搜索样式 -->
+    <link rel="stylesheet" type="text/css" href="css/search_css/normalize.css"/>
+    <link rel="stylesheet" href="css/search_css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/search_css/demo.css">
+    <link rel="stylesheet" href="css/search_css/style.css">
+
+    <link rel="stylesheet" href="static/element-2.12.0/index.css">
+    <script src="static/element-2.12.0/index.js"></script>
+
+    <!-- 引入自己写的样式 -->
+    <link rel="stylesheet" href="css/index_style.css">
+    <link rel="stylesheet" href="css/adopt_style.css">
+
+
+</head>
+<body>
+<div id="Vue-app">
+    <div class="header" id="header-top">   <!--line-height: 30px 将文字宽度与div一致 让文字居中 -->
+        <shotcut @deliver="getChildData(arguments)"></shotcut>   <!--组件化头部-->
+    </div>
+    <div class="container">
+        <!--logo图片-->
+        <div>
+            <img src="img/sa_logo.png">
+        </div>
+
+        <!--导航条-->
+        <div id="nav-1">
+            <ul class="nav">
+                <li class="slide1"></li>
+                <li class="slide2"></li>
+                <li><a class="active" href="index.html">首页</a></li>
+                <li><a href="sys-report.html">系统公告</a></li>
+                <li><a href="adopt.html">领养中心</a></li>
+                <li><a href="daily.html">日常栏目</a></li>
+                <li><a href="knowledge.html">宠物知识</a></li>
+                <li><a href="about-us.html">关于我们</a></li>
+                <!-- 搜索框 -->
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <li>
+                    <div class="search d7">
+                        <form>
+                            <input type="text" placeholder="搜索从这里开始...">
+                            <button type="submit"></button>
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <br>  <!--换行-->
+        <br>  <!--换行-->
+
+        <!----=========================内容开始==============================-->
+
+        <!-- 面包屑导航 -->
+        <div>
+            <ul class="breadcrumb">
+                <li><a href="index.html"><span class="glyphicon glyphicon-home"></span></a></li>
+                <li><a href="adopt.html">领养中心</a></li>
+            </ul>
+        </div>
+
+        <!--发布信息的导航新-->
+        <div style="height: 35px;background-color: #F9F0DA">
+            <span style="padding-left: 10px;line-height: 35px">填写基本信息</span>
+        </div>
+        <!--正文填写选项-->
+        <div class="select-message">
+            <table class="table-message">
+                <tr class="tr-message">
+                    <td class="td-message">
+                        <span style="color: red">*</span>
+                        <strong>标题：</strong>
+                    </td>
+                    <td>
+                        <input type="text" class="input-message" style="width:350px">
+                    </td>
+                </tr>
+                <!--品种-->
+                <tr class="tr-message">
+                    <td class="td-message">
+                        <span style="color: red">*</span>
+                        <strong>品种：</strong>
+                    </td>
+                    <td>
+                        <select style="width: 160px" class="input-message" v-model="petType">
+                            <option value="小狗">小狗</option>
+                            <option value="小猫">小猫</option>
+                        </select>
+                        &emsp;
+                    </td>
+                </tr>
+                <!--公母-->
+                <tr class="tr-message">
+                    <td class="td-message">
+                        <span style="color: red">*</span>
+                        <strong>公母：</strong>
+                    </td>
+                    <td>
+                        <select style="width: 160px" class="input-message" v-model="gender">
+                            <option value="公">公</option>
+                            <option value="母">母</option>
+                        </select>
+                    </td>
+                </tr>
+                <!--详细位置-->
+                <tr class="tr-message">
+                    <td class="td-message">
+                        <span style="color: red">*</span>
+                        <strong>详细位置：</strong>
+                    </td>
+                    <td>
+                        <input type="text" class="input-message" style="width:350px" v-model="location">
+                    </td>
+                </tr>
+                <tr class="tr-message">
+                    <td class="td-message">
+                        <span style="color: red">*</span>
+                        <strong>图片：</strong>
+                    </td>
+                    <td>
+                        <input type="text" class="input-message" style="width:350px" v-model="photoUrl">
+                    </td>
+                </tr>
+                <tr class="tr-message">
+                    <td class="td-message">
+                        <span style="color: red">*</span>
+                        <strong>描述：</strong>
+                    </td>
+                    <td>
+                        <textarea maxlength="400" rows="6" cols="80" style="padding-left: 10px" v-model="description" placeholder="请输入相关描述..."></textarea>
+                    </td>
+                </tr>
+                <!--联系方式-->
+                <tr class="tr-message">
+                    <td class="td-message">
+                        <span style="color: red">*</span>
+                        <strong>联系方式：</strong>
+                    </td>
+                    <td>
+                        <input type="text" class="input-message" style="width:160px" v-model="contact">
+                    </td>
+                </tr>
+                <tr class="tr-message">
+                    <td class="td-message">
+                    </td>
+                    <td>
+                        <!--发布按钮-->
+                        <input type="button" value="发布信息&emsp;" class="input-message"
+                            style="background-color: #FF0000;color: white" @click="submitMessage">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+        
+<!-- 引入导航栏js,注意和引入顺序有关 必须放在后面 -->
+<script src='js/jquery.min.js'></script>
+
+<!-- vue 调用-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+<script src="https://unpkg.com/axios@1.6.8/dist/axios.min.js"></script>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            petType: '小狗',
+            gender: '公',
+            location: '',
+            description: '',
+            contact: '',
+            adoptMsg: ''
+        },
+        methods: {
+            submitMessage() {
+                axios.post('http://127.0.0.1/adopt/new', {
+                    pet_type: this.petType,
+                    pet_photo_url: this.photoUrl,
+                    pet_description: this.description,
+                    contact_info: this.contact,
+                    pet_location: this.location,
+                }).then(response => {
+                    this.adoptMsg = response.data.message;
+                }).catch(error => {
+                    console.error('Error submitting message:', error);
+                    this.adoptMsg = '发布信息失败，请重试';
+                });
+                this.adoptMsg = '信息已提交';
+            }
+        }
+    });
+</script>
+        
+</body>
+</html>
